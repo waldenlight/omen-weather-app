@@ -22,73 +22,80 @@
     </nav>
 
     <div id="hero">
-        <h2>City</h2>
+        <h2 id="main-city-name"></h2>
     </div>
 
     <main>
 
         <aside>
             <form action="">
-                <label for="city">Search</label>
-                <input id="city" type="text">
+                <label for="city-search">Search</label>
+                <input id="city-search" type="text">
+                <a id="submit-button" value="Submit">Submit</a>
             </form>
 
             <div class="cities">
-                <h2>City</h2>
+                <h2 id="city-one"></h2>
             </div>
             <div class="cities">
-                <h2>City</h2>
+                <h2 id="city-two"></h2>
             </div>
             <div class="cities">
-                <h2>City</h2>
+                <h2 id="city-three"></h2>
             </div>
         </aside>
 
         <div id="city">
 
             <div id="current">
-                <h2 id="city-name">City</h2>
-                <p>Temperature:<span id="current-temperature"></span></p>
-                <p>Humidity:<span id="current-humidity"></span></p>
-                <p>Wind:<span id="current-wind"></span></p>
+                <h2 id="current-city-name"></h2>
+                <p>Temperature: <span id="current-temperature"></span></p>
+                <p>Humidity: <span id="current-humidity"></span></p>
+                <p>Wind: <span id="current-wind"></span></p>
             </div>
 
             <div id="days">
                 <div class="day" id="day-one">
-                    <h2 id="day-one-title">Day</h2>
-                    <p>Temperature:<span id="day-one-temperature"></span></p>
-                    <p>Humidity:<span id="day-one-humidity"></span></p>
-                    <p>Wind:<span id="current-one-wind"></span></p>
+                    <h2 id="day-one-title"></h2>
+                    <p>Temperature: <span id="day-one-temperature"></span></p>
+                    <p>Humidity: <span id="day-one-humidity"></span></p>
+                    <p>Wind: <span id="day-one-wind"></span></p>
                 </div>
                 <div class="day" id="day-two">
-                    <h2 id="day-two-title">Day</h2>
-                    <p>Temperature:<span id="current-two-temperature"></span></p>
-                    <p>Humidity:<span id="current-two-humidity"></span></p>
-                    <p>Wind:<span id="current-two-wind"></span></p>
+                    <h2 id="day-two-title"></h2>
+                    <p>Temperature: <span id="day-two-temperature"></span></p>
+                    <p>Humidity: <span id="day-two-humidity"></span></p>
+                    <p>Wind: <span id="day-two-wind"></span></p>
                 </div>
                 <div class="day" id="day-three">
-                    <h2 id="day-three-title">Day</h2>
-                    <p>Temperature:<span id="current-three-temperature"></span></p>
-                    <p>Humidity:<span id="current-three-humidity"></span></p>
-                    <p>Wind:<span id="current-three-wind"></span></p>
+                    <h2 id="day-three-title"></h2>
+                    <p>Temperature: <span id="day-three-temperature"></span></p>
+                    <p>Humidity: <span id="day-three-humidity"></span></p>
+                    <p>Wind: <span id="day-three-wind"></span></p>
                 </div>
                 <div class="day" id="day-four">
-                    <h2 id="day-four-title">Day</h2>
-                    <p>Temperature:<span id="current-four-temperature"></span></p>
-                    <p>Humidity:<span id="current-four-humidity"></span></p>
-                    <p>Wind:<span id="current-four-wind"></span></p>
+                    <h2 id="day-four-title"></h2>
+                    <p>Temperature: <span id="day-four-temperature"></span></p>
+                    <p>Humidity: <span id="day-four-humidity"></span></p>
+                    <p>Wind: <span id="day-four-wind"></span></p>
                 </div>
                 <div class="day" id="day-five">
-                    <h2 id="day-five-title">Day</h2>
-                    <p>Temperature:<span id="current-five-temperature"></span></p>
-                    <p>Humidity:<span id="current-five-humidity"></span></p>
-                    <p>Wind:<span id="current-five-wind"></span></p>
+                    <h2 id="day-five-title"></h2>
+                    <p>Temperature: <span id="day-five-temperature"></span></p>
+                    <p>Humidity: <span id="day-five-humidity"></span></p>
+                    <p>Wind: <span id="day-five-wind"></span></p>
                 </div>
             </div>
 
         </div>
 
     </main>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <!-- scripts -->
+    <script src="./assets/scripts/scripts.js"></script>
 
 </body>
 
