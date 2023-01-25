@@ -42,6 +42,62 @@ var dayFiveHumidity = $("#day-five-humidity");
 var dayFiveWind = $("#day-five-wind");
 //#endregion
 
+var saveCity = function (cityName) {
+    // Create local storage objects if none exist
+    if (!localStorage.getItem("cityOne")) {
+        var cityOne = {
+            name: cityName,
+        };
+        localStorage.setItem("cityOne", JSON.stringify(cityOne));
+        var cityTwo = {
+            name: '',
+        };
+        localStorage.setItem("cityTwo", JSON.stringify(cityTwo));
+        var cityThree = {
+            name: '',
+        };
+        localStorage.setItem("cityThree", JSON.stringify(cityThree));
+    } else {
+        var cityOneObject = JSON.parse(localStorage.getItem("cityOne"));
+        var cityTwoObject = JSON.parse(localStorage.getItem("cityTwo"));
+        var cityThreeObject = JSON.parse(localStorage.getItem("cityThree"));
+        // Change local object values
+        var cityOne = {
+            name: cityName,
+        };
+        localStorage.setItem("cityOne", JSON.stringify(cityOne));
+        var cityTwo = {
+            name: cityOneObject.name,
+        };
+        localStorage.setItem("cityTwo", JSON.stringify(cityTwo));
+        var cityThree = {
+            name: cityTwoObject.name,
+        };
+        localStorage.setItem("cityThree", JSON.stringify(cityThree));
+    }
+    setHistory();
+}
+
+var setHistory = function () {
+    var cityOneObject = JSON.parse(localStorage.getItem("cityOne"));
+    var cityTwoObject = JSON.parse(localStorage.getItem("cityTwo"));
+    var cityThreeObject = JSON.parse(localStorage.getItem("cityThree"));
+    // Display on aside
+    cityOne.text(cityOneObject.name);
+    cityTwo.text(cityTwoObject.name);
+    cityThree.text(cityThreeObject.name);
+}
+
+// Populate Cities
+var populateSearchHistory = function () {
+    if (localStorage.getItem("cityOne")) {
+        setHistory();
+    } else {
+        return
+    }
+}
+populateSearchHistory();
+
 var displayData = function (data) {
     if (data.length === 0) {
         currentCityTitle.text("No city found. Please enter a real place lol.");
@@ -56,7 +112,6 @@ var displayData = function (data) {
     dayOne.text(dayjs().add(1, 'day').format('dddd'));
     dayOneTemp.text(Math.floor((((data.list[1].main.temp - 273.15) * 9) / 5) + 32));
     dayOneHumidity.text(data.list[1].main.humidity + "%");
-    console.log(data.list[1].wind.speed)
     dayOneWind.text(Math.floor(data.list[1].wind.speed * 2.23694) + " mph");
     // Change Day One Card
     dayTwo.text(dayjs().add(2, 'day').format('dddd'));
@@ -78,6 +133,8 @@ var displayData = function (data) {
     dayFiveTemp.text(Math.floor((((data.list[5].main.temp - 273.15) * 9) / 5) + 32));
     dayFiveHumidity.text(data.list[5].main.humidity + "%");
     dayFiveWind.text(Math.floor(data.list[5].wind.speed * 2.23694) + " mph");
+
+    saveCity(data.city.name);
 }
 
 var queryApi = function () {
