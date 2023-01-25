@@ -3,9 +3,13 @@
 var citySubmitForm = $("#submit-button");
 var citySearch = $("#city-search");
 // Aside Cities
+var cities = $('.cities');
 var cityOne = $("#city-one");
+var cityOneDiv = $('#city-one-div');
 var cityTwo = $("#city-two");
+var cityTwoDiv = $('#city-two-div');
 var cityThree = $("#city-three");
+var cityThreeDiv = $('#city-three-div');
 //#endregion
 //#region Current City
 // City Name
@@ -98,7 +102,7 @@ var populateSearchHistory = function () {
 }
 populateSearchHistory();
 
-var displayData = function (data) {
+var displayData = function (data, retrieve) {
     if (data.length === 0) {
         currentCityTitle.text("No city found. Please enter a real place lol.");
         return
@@ -134,7 +138,10 @@ var displayData = function (data) {
     dayFiveHumidity.text(data.list[5].main.humidity + "%");
     dayFiveWind.text(Math.floor(data.list[5].wind.speed * 2.23694) + " mph");
 
-    saveCity(data.city.name);
+    // Check if data has been previously looked up using retrieve parameter
+    if (retrieve === false) {
+        saveCity(data.city.name);
+    }
 }
 
 var queryApi = function () {
@@ -144,13 +151,27 @@ var queryApi = function () {
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
-                    displayData(data);
+                    displayData(data, false);
                 });
             } else {
                 currentCityTitle.text("No city found. Please enter a real place lol.");
             }
         })
-
 }
 
 citySubmitForm.on("click", queryApi);
+
+var retrieveData = function (event) {
+    var city = $(event.target);
+    cityName = city.text();
+    var url = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=f712db1c8055a459e955a6153fa03a11";
+    fetch(url)
+        .then(function (response) {
+            if (response.ok) {
+                response.json().then(function (data) {
+                    displayData(data, true);
+                });
+            }
+        })
+}
+cities.on("click", retrieveData);
