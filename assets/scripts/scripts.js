@@ -53,28 +53,28 @@ var displayData = function (data) {
     currentHumidity.text(data.list[0].main.humidity + "%");
     currentWind.text(Math.floor(data.list[0].wind.speed * 2.23694) + " mph");
     // Change Day One Card
-    // ADD day of the week
+    dayOne.text(dayjs().add(1, 'day').format('dddd'));
     dayOneTemp.text(Math.floor((((data.list[1].main.temp - 273.15) * 9) / 5) + 32));
     dayOneHumidity.text(data.list[1].main.humidity + "%");
     console.log(data.list[1].wind.speed)
     dayOneWind.text(Math.floor(data.list[1].wind.speed * 2.23694) + " mph");
     // Change Day One Card
-    // ADD day of the week
+    dayTwo.text(dayjs().add(2, 'day').format('dddd'));
     dayTwoTemp.text(Math.floor((((data.list[2].main.temp - 273.15) * 9) / 5) + 32));
     dayTwoHumidity.text(data.list[2].main.humidity + "%");
     dayTwoWind.text(Math.floor(data.list[2].wind.speed * 2.23694) + " mph");
     // Change Day One Card
-    // ADD day of the week
+    dayThree.text(dayjs().add(3, 'day').format('dddd'));
     dayThreeTemp.text(Math.floor((((data.list[3].main.temp - 273.15) * 9) / 5) + 32));
     dayThreeHumidity.text(data.list[3].main.humidity + "%");
     dayThreeWind.text(Math.floor(data.list[3].wind.speed * 2.23694) + " mph");
     // Change Day One Card
-    // ADD day of the week
+    dayFour.text(dayjs().add(4, 'day').format('dddd'));
     dayFourTemp.text(Math.floor((((data.list[4].main.temp - 273.15) * 9) / 5) + 32));
     dayFourHumidity.text(data.list[4].main.humidity + "%");
     dayFourWind.text(Math.floor(data.list[4].wind.speed * 2.23694) + " mph");
     // Change Day One Card
-    // ADD day of the week
+    dayFive.text(dayjs().add(5, 'day').format('dddd'));
     dayFiveTemp.text(Math.floor((((data.list[5].main.temp - 273.15) * 9) / 5) + 32));
     dayFiveHumidity.text(data.list[5].main.humidity + "%");
     dayFiveWind.text(Math.floor(data.list[5].wind.speed * 2.23694) + " mph");
