@@ -13,7 +13,7 @@ A weather forecasting app for all your meterological needs.
 
 Simply view in GitHub Pages [Here](https://waldenlight.github.io/omen-weather-app/)
 
-    ![Screenshot of functioning site.](assets/images/screenshot.png)
+    ![Screenshot of functioning site.](./assets/images/screenshot.png)
 
 ## Credits
 
