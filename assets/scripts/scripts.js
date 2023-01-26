@@ -200,7 +200,7 @@ var displayData = function (data, retrieve) {
 
 var queryApi = function () {
     var cityName = citySearch.val();
-    var url = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=f712db1c8055a459e955a6153fa03a11";
+    var url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=f712db1c8055a459e955a6153fa03a11";
     fetch(url)
         .then(function (response) {
             if (response.ok) {
@@ -224,7 +224,7 @@ citySearch.on('keypress', function (e) {
 var retrieveData = function (event) {
     var city = $(event.target);
     cityName = city.text();
-    var url = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=f712db1c8055a459e955a6153fa03a11";
+    var url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=f712db1c8055a459e955a6153fa03a11";
     fetch(url)
         .then(function (response) {
             if (response.ok) {
