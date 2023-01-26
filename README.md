@@ -13,7 +13,9 @@ A weather forecasting app for all your meterological needs.
 
 Simply view in GitHub Pages [Here](https://waldenlight.github.io/omen-weather-app/)
 
-![Screenshot_20230125_091955](https://user-images.githubusercontent.com/76961678/214759133-739d8c33-11e6-4c03-900f-d95a7644be55.png)
+You should see this:
+
+![Screenshot of deployed application.](https://user-images.githubusercontent.com/76961678/214759133-739d8c33-11e6-4c03-900f-d95a7644be55.png)
 
 ## Credits
 
@@ -27,5 +29,6 @@ MIT License
 
 I do plan on adding more to this project overtime such as...
 1. Responsive styles
-2. More displayed data
-3. More functionality that differentiates this app from other weather apps
+2. More weather icons (perhaps even dynamic ones)
+3. More displayed data
+4. More functionality that differentiates this app from other weather apps
