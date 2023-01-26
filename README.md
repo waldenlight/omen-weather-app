@@ -11,11 +11,9 @@ A weather forecasting app for all your meterological needs.
 
 ## Usage
 
-Simply view in GitHub Pages [Here]()
+Simply view in GitHub Pages [Here](https://waldenlight.github.io/omen-weather-app/)
 
-    ```md
     ![Screenshot of functioning site.](assets/images/screenshot.png)
-    ```
 
 ## Credits
 
