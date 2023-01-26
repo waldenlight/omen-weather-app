@@ -85,14 +85,19 @@ form {
 }
 
 form label {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 form input {
     padding: 10px;
+    margin-bottom: 10px;
     width: 200px;
     border: #290e50 3px solid;
     border-radius: 10px;
+}
+
+form a:hover {
+    color: var(--blue-violet);
 }
 
 aside .cities {
@@ -143,10 +148,40 @@ aside .cities {
 
 .day h2 {
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+}
+
+.day i {
+    margin: 5px;
 }
 
 .day p {
     font-size: 15px;
     padding-bottom: 10px;
+}
+
+.title {
+    display: flex;
+}
+
+.fa-cloud,
+.fa-raindrops {
+    color: white;
+    font-size: 70px;
+}
+
+.fa-sun {
+    color: yellow;
+    font-size: 70px;
+}
+
+#days .fa-cloud,
+#days .fa-raindrops {
+    color: white;
+    font-size: 30px;
+}
+
+#days .fa-sun {
+    color: yellow;
+    font-size: 30px;
 }
