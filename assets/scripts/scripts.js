@@ -114,7 +114,7 @@ var displayData = function (data, retrieve) {
         return
     }
     // Change current card
-    currentCityTitle.text(data.city.name);
+    currentCityTitle.text(data.city.name + " " + dayjs().format("DD/MM/YYYY"));
     currentTemperature.text(Math.floor((((data.list[0].main.temp - 273.15) * 9) / 5) + 32));
     currentHumidity.text(data.list[0].main.humidity + "%");
     currentWind.text(Math.floor(data.list[0].wind.speed * 2.23694) + " mph");
@@ -127,7 +127,7 @@ var displayData = function (data, retrieve) {
         currentIcon.attr("class", "fa-solid fa-raindrops")
     }
     // Change day one card
-    dayOne.text(dayjs().add(1, 'day').format('dddd'));
+    dayOne.text(dayjs().add(1, 'day').format("DD/MM/YYYY"));
     dayOneTemp.text(Math.floor((((data.list[1].main.temp - 273.15) * 9) / 5) + 32));
     dayOneHumidity.text(data.list[1].main.humidity + "%");
     dayOneWind.text(Math.floor(data.list[1].wind.speed * 2.23694) + " mph");
@@ -140,7 +140,7 @@ var displayData = function (data, retrieve) {
         dayOneIcon.attr("class", "fa-solid fa-raindrops")
     }
     // Change day two card
-    dayTwo.text(dayjs().add(2, 'day').format('dddd'));
+    dayTwo.text(dayjs().add(2, 'day').format("DD/MM/YYYY"));
     dayTwoTemp.text(Math.floor((((data.list[2].main.temp - 273.15) * 9) / 5) + 32));
     dayTwoHumidity.text(data.list[2].main.humidity + "%");
     dayTwoWind.text(Math.floor(data.list[2].wind.speed * 2.23694) + " mph");
@@ -153,7 +153,7 @@ var displayData = function (data, retrieve) {
         dayTwoIcon.attr("class", "fa-solid fa-raindrops")
     }
     // Change day three card
-    dayThree.text(dayjs().add(3, 'day').format('dddd'));
+    dayThree.text(dayjs().add(3, 'day').format("DD/MM/YYYY"));
     dayThreeTemp.text(Math.floor((((data.list[3].main.temp - 273.15) * 9) / 5) + 32));
     dayThreeHumidity.text(data.list[3].main.humidity + "%");
     dayThreeWind.text(Math.floor(data.list[3].wind.speed * 2.23694) + " mph");
@@ -166,7 +166,7 @@ var displayData = function (data, retrieve) {
         dayThreeIcon.attr("class", "fa-solid fa-raindrops")
     }
     // Change day four card
-    dayFour.text(dayjs().add(4, 'day').format('dddd'));
+    dayFour.text(dayjs().add(4, 'day').format("DD/MM/YYYY"));
     dayFourTemp.text(Math.floor((((data.list[4].main.temp - 273.15) * 9) / 5) + 32));
     dayFourHumidity.text(data.list[4].main.humidity + "%");
     dayFourWind.text(Math.floor(data.list[4].wind.speed * 2.23694) + " mph");
@@ -179,7 +179,7 @@ var displayData = function (data, retrieve) {
         dayFourIcon.attr("class", "fa-solid fa-raindrops")
     }
     // Change day five card
-    dayFive.text(dayjs().add(5, 'day').format('dddd'));
+    dayFive.text(dayjs().add(5, 'day').format("DD/MM/YYYY"));
     dayFiveTemp.text(Math.floor((((data.list[5].main.temp - 273.15) * 9) / 5) + 32));
     dayFiveHumidity.text(data.list[5].main.humidity + "%");
     dayFiveWind.text(Math.floor(data.list[5].wind.speed * 2.23694) + " mph");
