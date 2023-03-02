@@ -176,7 +176,8 @@ aside .cities {
 }
 
 #days .fa-cloud,
-#days .fa-raindrops {
+#days .fa-raindrops,
+#days .fa-snowflake {
     color: white;
     font-size: 30px;
 }

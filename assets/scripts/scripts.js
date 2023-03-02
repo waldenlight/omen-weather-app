@@ -118,80 +118,64 @@ var displayData = function (data, retrieve) {
     currentTemperature.text(Math.floor((((data.list[0].main.temp - 273.15) * 9) / 5) + 32));
     currentHumidity.text(data.list[0].main.humidity + "%");
     currentWind.text(Math.floor(data.list[0].wind.speed * 2.23694) + " mph");
-    // Set current icon
-    if (data.list[0].weather[0].description === "clear sky" || data.list[0].weather[0].description === "few clouds") {
-        currentIcon.attr("class", "fa-solid fa-sun")
-    } else if (data.list[0].weather[0].description === "scattered clouds" || data.list[0].weather[0].description === "overcast clouds") {
-        currentIcon.attr("class", "fa-solid fa-cloud")
-    } else if (data.list[0].weather[0].description === "shower rain" || data.list[0].weather[0].description === "rain") {
-        currentIcon.attr("class", "fa-solid fa-raindrops")
+
+    // Set icons
+    for (let i = 0; i < 6; i++) {
+        // Determine icon to be manipulated
+        if (i === 0) {
+            icon = currentIcon
+        } else if (i === 1) {
+            icon = dayOneIcon
+        } else if (i === 2) {
+            icon = dayTwoIcon
+        } else if (i === 3) {
+            icon = dayThreeIcon
+        } else if (i === 4) {
+            icon = dayFourIcon
+        } else if (i === 5) {
+            icon = dayFiveIcon
+        }
+        // Change icon based on weather
+        if (data.list[i].weather[0].description === "clear sky"
+            || data.list[i].weather[0].description === "few clouds") {
+            icon.attr("class", "fa-solid fa-sun")
+        } else if (data.list[i].weather[0].description === "scattered clouds"
+            || data.list[i].weather[0].description === "overcast clouds"
+            || data.list[i].weather[0].description === "broken clouds") {
+            icon.attr("class", "fa-solid fa-cloud")
+        } else if (data.list[i].weather[0].description === "shower rain"
+            || data.list[i].weather[0].description === "rain"
+            || data.list[i].weather[0].description === "thunderstorm") {
+            icon.attr("class", "fa-solid fa-raindrops")
+        } else if (data.list[i].weather[0].description === "snow") {
+            icon.attr("class", "fa-solid fa-snowflake")
+        }
     }
     // Change day one card
     dayOne.text(dayjs().add(1, 'day').format("DD/MM/YYYY"));
     dayOneTemp.text(Math.floor((((data.list[1].main.temp - 273.15) * 9) / 5) + 32));
     dayOneHumidity.text(data.list[1].main.humidity + "%");
     dayOneWind.text(Math.floor(data.list[1].wind.speed * 2.23694) + " mph");
-    // Set day one icon
-    if (data.list[1].weather[0].description === "clear sky" || data.list[1].weather[0].description === "few clouds") {
-        dayOneIcon.attr("class", "fa-solid fa-sun")
-    } else if (data.list[1].weather[0].description === "scattered clouds" || data.list[1].weather[0].description === "overcast clouds") {
-        dayOneIcon.attr("class", "fa-solid fa-cloud")
-    } else if (data.list[1].weather[0].description === "shower rain" || data.list[1].weather[0].description === "rain") {
-        dayOneIcon.attr("class", "fa-solid fa-raindrops")
-    }
     // Change day two card
     dayTwo.text(dayjs().add(2, 'day').format("DD/MM/YYYY"));
     dayTwoTemp.text(Math.floor((((data.list[2].main.temp - 273.15) * 9) / 5) + 32));
     dayTwoHumidity.text(data.list[2].main.humidity + "%");
     dayTwoWind.text(Math.floor(data.list[2].wind.speed * 2.23694) + " mph");
-    // Set day two icon
-    if (data.list[2].weather[0].description === "clear sky" || data.list[2].weather[0].description === "few clouds") {
-        dayTwoIcon.attr("class", "fa-solid fa-sun")
-    } else if (data.list[2].weather[0].description === "scattered clouds" || data.list[2].weather[0].description === "overcast clouds") {
-        dayTwoIcon.attr("class", "fa-solid fa-cloud")
-    } else if (data.list[2].weather[0].description === "shower rain" || data.list[2].weather[0].description === "rain") {
-        dayTwoIcon.attr("class", "fa-solid fa-raindrops")
-    }
     // Change day three card
     dayThree.text(dayjs().add(3, 'day').format("DD/MM/YYYY"));
     dayThreeTemp.text(Math.floor((((data.list[3].main.temp - 273.15) * 9) / 5) + 32));
     dayThreeHumidity.text(data.list[3].main.humidity + "%");
     dayThreeWind.text(Math.floor(data.list[3].wind.speed * 2.23694) + " mph");
-    // Set day three icon
-    if (data.list[3].weather[0].description === "clear sky" || data.list[3].weather[0].description === "few clouds") {
-        dayThreeIcon.attr("class", "fa-solid fa-sun")
-    } else if (data.list[3].weather[0].description === "scattered clouds" || data.list[3].weather[0].description === "overcast clouds") {
-        dayThreeIcon.attr("class", "fa-solid fa-cloud")
-    } else if (data.list[3].weather[0].description === "shower rain" || data.list[3].weather[0].description === "rain") {
-        dayThreeIcon.attr("class", "fa-solid fa-raindrops")
-    }
     // Change day four card
     dayFour.text(dayjs().add(4, 'day').format("DD/MM/YYYY"));
     dayFourTemp.text(Math.floor((((data.list[4].main.temp - 273.15) * 9) / 5) + 32));
     dayFourHumidity.text(data.list[4].main.humidity + "%");
     dayFourWind.text(Math.floor(data.list[4].wind.speed * 2.23694) + " mph");
-    // Set day four icon
-    if (data.list[4].weather[0].description === "clear sky" || data.list[4].weather[0].description === "few clouds") {
-        dayFourIcon.attr("class", "fa-solid fa-sun")
-    } else if (data.list[4].weather[0].description === "scattered clouds" || data.list[4].weather[0].description === "overcast clouds") {
-        dayFourIcon.attr("class", "fa-solid fa-cloud")
-    } else if (data.list[4].weather[0].description === "shower rain" || data.list[4].weather[0].description === "rain") {
-        dayFourIcon.attr("class", "fa-solid fa-raindrops")
-    }
     // Change day five card
     dayFive.text(dayjs().add(5, 'day').format("DD/MM/YYYY"));
     dayFiveTemp.text(Math.floor((((data.list[5].main.temp - 273.15) * 9) / 5) + 32));
     dayFiveHumidity.text(data.list[5].main.humidity + "%");
     dayFiveWind.text(Math.floor(data.list[5].wind.speed * 2.23694) + " mph");
-    // Set day five icon
-    if (data.list[5].weather[0].description === "clear sky" || data.list[5].weather[0].description === "few clouds") {
-        dayFiveIcon.attr("class", "fa-solid fa-sun")
-    } else if (data.list[5].weather[0].description === "scattered clouds" || data.list[5].weather[0].description === "overcast clouds") {
-        dayFiveIcon.attr("class", "fa-solid fa-cloud")
-    } else if (data.list[5].weather[0].description === "shower rain" || data.list[5].weather[0].description === "rain") {
-        dayFiveIcon.attr("class", "fa-solid fa-raindrops")
-    }
-
     // Check if data has been previously looked up using retrieve parameter
     if (retrieve === false) {
         saveCity(data.city.name);
