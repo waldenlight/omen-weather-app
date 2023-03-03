@@ -113,8 +113,10 @@ var displayData = function (data, retrieve) {
         currentCityTitle.text("No city found. Please enter a real place lol.");
         return
     }
+    mainCityTitle.text(data.city.name)
     // Change current card
-    currentCityTitle.text(data.city.name + " " + dayjs().format("DD/MM/YYYY"));
+    // currentCityTitle.text(data.city.name + " " + dayjs().format("MMMM D, YYYY"));
+    currentCityTitle.text(dayjs().format("MMMM D, YYYY"));
     currentTemperature.text(Math.floor((((data.list[0].main.temp - 273.15) * 9) / 5) + 32));
     currentHumidity.text(data.list[0].main.humidity + "%");
     currentWind.text(Math.floor(data.list[0].wind.speed * 2.23694) + " mph");
@@ -152,27 +154,27 @@ var displayData = function (data, retrieve) {
         }
     }
     // Change day one card
-    dayOne.text(dayjs().add(1, 'day').format("DD/MM/YYYY"));
+    dayOne.text(dayjs().add(1, 'day').format("MMMM D, YYYY"));
     dayOneTemp.text(Math.floor((((data.list[1].main.temp - 273.15) * 9) / 5) + 32));
     dayOneHumidity.text(data.list[1].main.humidity + "%");
     dayOneWind.text(Math.floor(data.list[1].wind.speed * 2.23694) + " mph");
     // Change day two card
-    dayTwo.text(dayjs().add(2, 'day').format("DD/MM/YYYY"));
+    dayTwo.text(dayjs().add(2, 'day').format("MMMM D, YYYY"));
     dayTwoTemp.text(Math.floor((((data.list[2].main.temp - 273.15) * 9) / 5) + 32));
     dayTwoHumidity.text(data.list[2].main.humidity + "%");
     dayTwoWind.text(Math.floor(data.list[2].wind.speed * 2.23694) + " mph");
     // Change day three card
-    dayThree.text(dayjs().add(3, 'day').format("DD/MM/YYYY"));
+    dayThree.text(dayjs().add(3, 'day').format("MMMM D, YYYY"));
     dayThreeTemp.text(Math.floor((((data.list[3].main.temp - 273.15) * 9) / 5) + 32));
     dayThreeHumidity.text(data.list[3].main.humidity + "%");
     dayThreeWind.text(Math.floor(data.list[3].wind.speed * 2.23694) + " mph");
     // Change day four card
-    dayFour.text(dayjs().add(4, 'day').format("DD/MM/YYYY"));
+    dayFour.text(dayjs().add(4, 'day').format("MMMM D, YYYY"));
     dayFourTemp.text(Math.floor((((data.list[4].main.temp - 273.15) * 9) / 5) + 32));
     dayFourHumidity.text(data.list[4].main.humidity + "%");
     dayFourWind.text(Math.floor(data.list[4].wind.speed * 2.23694) + " mph");
     // Change day five card
-    dayFive.text(dayjs().add(5, 'day').format("DD/MM/YYYY"));
+    dayFive.text(dayjs().add(5, 'day').format("MMMM D, YYYY"));
     dayFiveTemp.text(Math.floor((((data.list[5].main.temp - 273.15) * 9) / 5) + 32));
     dayFiveHumidity.text(data.list[5].main.humidity + "%");
     dayFiveWind.text(Math.floor(data.list[5].wind.speed * 2.23694) + " mph");

@@ -4,7 +4,7 @@
     --blue-violet: #7c3acb;
     --ocean-blue: #5a30cb;
     --orchid-crayola: #f598d7;
-    --gray-web: #9d9d9d;
+    --gray-web: #808080;
 }
 
 * {
@@ -12,12 +12,12 @@
 }
 
 body {
-    background-color: var(--ocean-blue);
+    background-color: black;
 }
 
 nav {
     padding: 10px;
-    background-color: var(--ocean-blue);
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,14 +35,23 @@ h1 {
     font-family: 'Racing Sans One', cursive;
 }
 
+.slogan {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    color: white;
+    font-family: 'Racing Sans One', cursive;
+    font-size: 20px;
+}
+
 #hero {
-    padding: 150px;
-    background-color: var(--gray-web);
-    background-image: url("../images/city.jpg");
-    background-position: 50% 0%;
+    padding: 120px;
+    background-color: white;
+    background-image: url("../images/london.jpg");
+    background-position: 50% 80%;
     background-attachment: fixed;
     background-size: cover;
-    background-color: #646464;
+    background-color: #7a7a7a;
     background-blend-mode: multiply;
     display: flex;
     justify-content: center;
@@ -58,10 +67,9 @@ h1 {
 
 main {
     background-color: white;
-    margin: 20px;
-    border-radius: 10px;
-    border-radius: 20px;
+    margin: 15px;
     display: flex;
+    border-radius: 5px
 }
 
 aside {
@@ -69,10 +77,14 @@ aside {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--gray-web);
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-right: var(--russian-violet) 5px solid;
+    background-color: white;
+    border-right: black 10px solid;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#city {
+    width: auto;
 }
 
 form {
@@ -80,7 +92,7 @@ form {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    color: var(--russian-violet);
+    color: black;
     font-size: 30px;
 }
 
@@ -90,34 +102,42 @@ form label {
 
 form input {
     padding: 10px;
-    margin-bottom: 10px;
     width: 200px;
-    border: #290e50 3px solid;
+    border: black 4px solid;
     border-radius: 10px;
-}
-
-form a:hover {
-    color: var(--blue-violet);
 }
 
 aside .cities {
     padding: 20px;
-    margin: 10px;
+    margin: 10px 20px;
     display: flex;
     justify-content: center;
-    border-radius: 10px;
     font-size: 40px;
-    color: var(--russian-violet);
+    color: black;
+    border: black solid 5px;
+    box-shadow: 2px 2px 5px black;
+    border-radius: 5px;
+    background-color: var(--gray-web);
     width: 200px;
 }
 
+aside .cities:hover {
+    color: white;
+    border: black solid 5px;
+    background-color: var(--ksu-purple);
+}
+
 #current {
-    background-color: var(--gray-web);
-    color: var(--russian-violet);
-    margin: 20px;
-    padding: 10px;
+    display: flex;
+    background-color: white;
+    color: black;
+    border: black solid 5px;
     border-radius: 10px;
-    width: 400px;
+    box-shadow: 5px 5px 10px black;
+    margin: 30px;
+    margin-bottom: none;
+    padding: 15px;
+    width: auto;
 }
 
 #current h2 {
@@ -127,6 +147,7 @@ aside .cities {
 
 #current p {
     margin: 15px 30px;
+    font-size: 30px
 }
 
 #days {
@@ -137,18 +158,22 @@ aside .cities {
 .day {
     margin: 10px;
     padding: 30px;
-    background-color: var(--russian-violet);
+    border-radius: 5px;
+    background-color: black;
     color: white;
-    border-radius: 10px;
 }
 
 .day:first-of-type {
-    margin-left: 20px;
+    margin-left: 30px;
+}
+
+.day:last-of-type {
+    margin-right: 30px;
 }
 
 .day h2 {
     font-size: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .day i {
@@ -157,7 +182,12 @@ aside .cities {
 
 .day p {
     font-size: 15px;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.day p:first-of-type {
+    font-size: 15px;
+    margin-top: 15px;
 }
 
 .title {
@@ -185,4 +215,17 @@ aside .cities {
 #days .fa-sun {
     color: yellow;
     font-size: 30px;
+}
+
+.fa-sun {
+    color: #ffdb39 !important;
+    font-size: 190px !important;
+    text-shadow: 0px 0px 8px black !important;
+}
+
+#current .fa-solid {
+    margin-top: 10px;
+    font-size: 200px;
+    margin-left: 80px;
+    text-shadow: 0px 0px 10px black;
 }
