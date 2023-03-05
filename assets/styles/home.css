@@ -4,7 +4,7 @@
     --blue-violet: #7c3acb;
     --ocean-blue: #5a30cb;
     --orchid-crayola: #f598d7;
-    --gray-web: #808080;
+    --gray-web: #999999;
 }
 
 * {
@@ -67,7 +67,7 @@ h1 {
 
 main {
     background-color: white;
-    margin: 15px;
+    margin: 20px;
     display: flex;
     border-radius: 5px
 }
@@ -78,7 +78,7 @@ aside {
     flex-direction: column;
     align-items: center;
     background-color: white;
-    border-right: black 10px solid;
+    border-right: black 5px solid;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
@@ -109,13 +109,13 @@ form input {
 
 aside .cities {
     padding: 20px;
-    margin: 10px 20px;
+    margin: 15px 20px;
     display: flex;
     justify-content: center;
     font-size: 40px;
     color: black;
-    border: black solid 5px;
-    box-shadow: 2px 2px 5px black;
+    border: black solid 3px;
+    /* box-shadow: 2px 2px 5px black; */
     border-radius: 5px;
     background-color: var(--gray-web);
     width: 200px;
@@ -123,7 +123,7 @@ aside .cities {
 
 aside .cities:hover {
     color: white;
-    border: black solid 5px;
+    border: black solid 3px;
     background-color: var(--ksu-purple);
 }
 
@@ -131,13 +131,13 @@ aside .cities:hover {
     display: flex;
     background-color: white;
     color: black;
-    border: black solid 5px;
+    /* border: black solid 3px; */
     border-radius: 10px;
-    box-shadow: 5px 5px 10px black;
+    /* box-shadow: 5px 5px 10px black; */
     margin: 30px;
     margin-bottom: none;
-    padding: 15px;
-    width: auto;
+    padding: 15px 50px 15px 15px;
+    width: fit-content;
 }
 
 #current h2 {
@@ -146,7 +146,7 @@ aside .cities:hover {
 }
 
 #current p {
-    margin: 15px 30px;
+    margin: 15px 20px;
     font-size: 30px
 }
 
@@ -194,7 +194,7 @@ aside .cities:hover {
     display: flex;
 }
 
-.fa-cloud,
+.fa-cloud-sun,
 .fa-raindrops {
     color: white;
     font-size: 70px;
@@ -202,30 +202,21 @@ aside .cities:hover {
 
 .fa-sun {
     color: yellow;
-    font-size: 70px;
+    font-size: 200px;
 }
 
-#days .fa-cloud,
+#days .fa-cloud-sun,
 #days .fa-raindrops,
-#days .fa-snowflake {
-    color: white;
-    font-size: 30px;
-}
-
+#days .fa-snowflake,
 #days .fa-sun {
-    color: yellow;
-    font-size: 30px;
-}
-
-.fa-sun {
-    color: #ffdb39 !important;
-    font-size: 190px !important;
-    text-shadow: 0px 0px 8px black !important;
+    color: white;
+    font-size: 70px;
 }
 
 #current .fa-solid {
     margin-top: 10px;
     font-size: 200px;
-    margin-left: 80px;
-    text-shadow: 0px 0px 10px black;
+    margin-left: 50px;
+    color: black;
+    /* text-shadow: 0px 0px 20px black; */
 }
