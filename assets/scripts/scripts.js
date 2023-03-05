@@ -144,7 +144,7 @@ var displayData = function (data, retrieve) {
         } else if (data.list[i].weather[0].description === "scattered clouds"
             || data.list[i].weather[0].description === "overcast clouds"
             || data.list[i].weather[0].description === "broken clouds") {
-            icon.attr("class", "fa-solid fa-cloud")
+            icon.attr("class", "fa-solid fa-cloud-sun")
         } else if (data.list[i].weather[0].description === "shower rain"
             || data.list[i].weather[0].description === "rain"
             || data.list[i].weather[0].description === "thunderstorm") {
