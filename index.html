@@ -28,92 +28,94 @@
     </nav>
 
     <div id="hero">
-        <h2 id="main-city-name"></h2>
+        <h2 id="main-city-name">Welcome!</h2>
     </div>
 
-    <main>
+    <div class="center">
+        <main>
 
-        <aside>
-            <form action="">
-                <label for="city-search">Search</label>
-                <input id="city-search" type="text">
-            </form>
+            <aside>
+                <form action="">
+                    <!-- <label for="city-search">Search</label> -->
+                    <input id="city-search" type="text" placeholder="Search">
+                </form>
 
-            <div class="cities" id="city-one-div">
-                <h2 id="city-one"></h2>
+                <div class="cities" id="city-one-div">
+                    <h2 id="city-one"></h2>
+                </div>
+                <div class="cities" id="city-two-container">
+                    <h2 id="city-two" id="city-two-div"></h2>
+                </div>
+                <div class="cities" id="city-three-container">
+                    <h2 id="city-three" id="city-three-div"></h2>
+                </div>
+            </aside>
+
+            <div id="city">
+
+                <div id="current">
+                    <div class="current-text">
+                        <div class="title">
+                            <h2 id="current-city-name"></h2>
+                        </div>
+                        <p>Temperature: <span id="current-temperature"></span></p>
+                        <p>Humidity: <span id="current-humidity"></span></p>
+                        <p>Wind: <span id="current-wind"></span></p>
+                    </div>
+                    <i id="current-icon"></i>
+                </div>
+
+                <div id="days">
+                    <div class="day" id="day-one">
+                        <div class="day-title">
+                            <h2 id="day-one-title"></h2>
+                        </div>
+                        <i id="day-one-icon"></i>
+                        <p>Temperature: <span id="day-one-temperature"></span></p>
+                        <p>Humidity: <span id="day-one-humidity"></span></p>
+                        <p>Wind: <span id="day-one-wind"></span></p>
+                    </div>
+                    <div class="day" id="day-two">
+                        <div class="day-title">
+                            <h2 id="day-two-title"></h2>
+                        </div>
+                        <i id="day-two-icon"></i>
+                        <p>Temperature: <span id="day-two-temperature"></span></p>
+                        <p>Humidity: <span id="day-two-humidity"></span></p>
+                        <p>Wind: <span id="day-two-wind"></span></p>
+                    </div>
+                    <div class="day" id="day-three">
+                        <div class="day-title">
+                            <h2 id="day-three-title"></h2>
+                        </div>
+                        <i id="day-three-icon"></i>
+                        <p>Temperature: <span id="day-three-temperature"></span></p>
+                        <p>Humidity: <span id="day-three-humidity"></span></p>
+                        <p>Wind: <span id="day-three-wind"></span></p>
+                    </div>
+                    <div class="day" id="day-four">
+                        <div class="day-title">
+                            <h2 id="day-four-title"></h2>
+                        </div>
+                        <i id="day-four-icon"></i>
+                        <p>Temperature: <span id="day-four-temperature"></span></p>
+                        <p>Humidity: <span id="day-four-humidity"></span></p>
+                        <p>Wind: <span id="day-four-wind"></span></p>
+                    </div>
+                    <div class="day" id="day-five">
+                        <div class="day-title">
+                            <h2 id="day-five-title"></h2><i id="day-five-icon"></i>
+                        </div>
+                        <p>Temperature: <span id="day-five-temperature"></span></p>
+                        <p>Humidity: <span id="day-five-humidity"></span></p>
+                        <p>Wind: <span id="day-five-wind"></span></p>
+                    </div>
+                </div>
+
             </div>
-            <div class="cities">
-                <h2 id="city-two" id="city-two-div"></h2>
-            </div>
-            <div class="cities">
-                <h2 id="city-three" id="city-three-div"></h2>
-            </div>
-        </aside>
 
-        <div id="city">
-
-            <div id="current">
-                <div class="current-text">
-                    <div class="title">
-                        <h2 id="current-city-name"></h2>
-                    </div>
-                    <p>Temperature: <span id="current-temperature"></span></p>
-                    <p>Humidity: <span id="current-humidity"></span></p>
-                    <p>Wind: <span id="current-wind"></span></p>
-                </div>
-                <i id="current-icon"></i>
-            </div>
-
-            <div id="days">
-                <div class="day" id="day-one">
-                    <div class="day-title">
-                        <h2 id="day-one-title"></h2>
-                    </div>
-                    <i id="day-one-icon"></i>
-                    <p>Temperature: <span id="day-one-temperature"></span></p>
-                    <p>Humidity: <span id="day-one-humidity"></span></p>
-                    <p>Wind: <span id="day-one-wind"></span></p>
-                </div>
-                <div class="day" id="day-two">
-                    <div class="day-title">
-                        <h2 id="day-two-title"></h2>
-                    </div>
-                    <i id="day-two-icon"></i>
-                    <p>Temperature: <span id="day-two-temperature"></span></p>
-                    <p>Humidity: <span id="day-two-humidity"></span></p>
-                    <p>Wind: <span id="day-two-wind"></span></p>
-                </div>
-                <div class="day" id="day-three">
-                    <div class="day-title">
-                        <h2 id="day-three-title"></h2>
-                    </div>
-                    <i id="day-three-icon"></i>
-                    <p>Temperature: <span id="day-three-temperature"></span></p>
-                    <p>Humidity: <span id="day-three-humidity"></span></p>
-                    <p>Wind: <span id="day-three-wind"></span></p>
-                </div>
-                <div class="day" id="day-four">
-                    <div class="day-title">
-                        <h2 id="day-four-title"></h2>
-                    </div>
-                    <i id="day-four-icon"></i>
-                    <p>Temperature: <span id="day-four-temperature"></span></p>
-                    <p>Humidity: <span id="day-four-humidity"></span></p>
-                    <p>Wind: <span id="day-four-wind"></span></p>
-                </div>
-                <div class="day" id="day-five">
-                    <div class="day-title">
-                        <h2 id="day-five-title"></h2><i id="day-five-icon"></i>
-                    </div>
-                    <p>Temperature: <span id="day-five-temperature"></span></p>
-                    <p>Humidity: <span id="day-five-humidity"></span></p>
-                    <p>Wind: <span id="day-five-wind"></span></p>
-                </div>
-            </div>
-
-        </div>
-
-    </main>
+        </main>
+    </div>
 
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
