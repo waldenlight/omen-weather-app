@@ -128,6 +128,17 @@ var populateSearchHistory = function () {
 populateSearchHistory();
 
 var displayData = function (data, retrieve) {
+    // Change background photo
+    // var url = "https://maps.googleapis.com/maps/api/place/details/json?place_id=" + placeId + "&fields=photo&key=" + apiKey;
+    // fetch(url)
+    //     .then(function (response) {
+    //         if (response.ok) {
+    //             response.json().then(function (data) {
+    //                 // Display new background photo
+    //             });
+    //         }
+    //     })
+
     aside.css("min-width", "");
     city.show();
     if (data.length === 0) {
