@@ -1,4 +1,6 @@
+var main = $('main')
 //#region Aside 
+var aside = $('aside');
 // City search
 var citySubmitForm = $("#submit-button");
 var citySearch = $("#city-search");
@@ -6,12 +8,15 @@ var citySearch = $("#city-search");
 var cities = $('.cities');
 var cityOne = $("#city-one");
 var cityOneDiv = $('#city-one-div');
+var cityTwoContainer = $('#city-two-container');
 var cityTwo = $("#city-two");
 var cityTwoDiv = $('#city-two-div');
+var cityThreeContainer = $('#city-three-container');
 var cityThree = $("#city-three");
 var cityThreeDiv = $('#city-three-div');
 //#endregion
 //#region Current City
+var city = $('#city');
 // City Name
 var mainCityTitle = $('#main-city-name');
 // Current
@@ -94,8 +99,19 @@ var setHistory = function () {
     var cityThreeObject = JSON.parse(localStorage.getItem("cityThree"));
     // Display on aside
     cityOne.text(cityOneObject.name);
-    cityTwo.text(cityTwoObject.name);
-    cityThree.text(cityThreeObject.name);
+    console.log(cityTwoObject.name)
+    if (cityTwoObject.name !== "") {
+        cityTwoContainer.show();
+        cityTwo.text(cityTwoObject.name);
+    } else {
+        cityTwoContainer.hide();
+    }
+    if (cityThreeObject.name !== "") {
+        cityThreeContainer.show();
+        cityThree.text(cityThreeObject.name);
+    } else {
+        cityThreeContainer.hide();
+    }
 }
 
 // Populate Cities
@@ -103,12 +119,17 @@ var populateSearchHistory = function () {
     if (localStorage.getItem("cityOne")) {
         setHistory();
     } else {
-        return
+        cities.hide();
     }
+    aside.css("min-width", "100%");
+    city.hide();
 }
+
 populateSearchHistory();
 
 var displayData = function (data, retrieve) {
+    aside.css("min-width", "");
+    city.show();
     if (data.length === 0) {
         currentCityTitle.text("No city found. Please enter a real place lol.");
         return
@@ -200,6 +221,7 @@ var queryApi = function () {
 }
 
 citySubmitForm.on("click", queryApi);
+
 citySearch.on('keypress', function (e) {
     if (e.which == 13) {
         e.preventDefault()
@@ -220,4 +242,5 @@ var retrieveData = function (event) {
             }
         })
 }
+
 cities.on("click", retrieveData);
