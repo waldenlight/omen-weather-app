@@ -1,4 +1,5 @@
 var main = $('main')
+var hero = $('#hero')
 //#region Aside 
 var aside = $('aside');
 // City search
@@ -99,7 +100,6 @@ var setHistory = function () {
     var cityThreeObject = JSON.parse(localStorage.getItem("cityThree"));
     // Display on aside
     cityOne.text(cityOneObject.name);
-    console.log(cityTwoObject.name)
     if (cityTwoObject.name !== "") {
         cityTwoContainer.show();
         cityTwo.text(cityTwoObject.name);
@@ -122,6 +122,7 @@ var populateSearchHistory = function () {
         cities.hide();
     }
     aside.css("min-width", "100%");
+    hero.hide();
     city.hide();
 }
 
@@ -145,6 +146,7 @@ var displayData = function (data, retrieve) {
         currentCityTitle.text("No city found. Please enter a real place lol.");
         return
     }
+    hero.show();
     mainCityTitle.text(data.city.name)
     // Change current card
     // currentCityTitle.text(data.city.name + " " + dayjs().format("MMMM D, YYYY"));
@@ -177,6 +179,8 @@ var displayData = function (data, retrieve) {
             || data.list[i].weather[0].description === "overcast clouds"
             || data.list[i].weather[0].description === "broken clouds") {
             icon.attr("class", "fa-solid fa-cloud-sun")
+        } else if (data.list[i].weather[0].description === "mist") {
+            icon.attr("class", "fa-solid fa-cloud-fog")
         } else if (data.list[i].weather[0].description === "shower rain"
             || data.list[i].weather[0].description === "rain"
             || data.list[i].weather[0].description === "thunderstorm") {

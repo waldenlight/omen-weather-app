@@ -12,13 +12,20 @@
 }
 
 body {
-    background-color: black;
     /* Transitions */
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    background-image: url("../images/london.jpg");
+    background-position: 50% 80%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #7a7a7a;
+    background-blend-mode: multiply;
+
 }
 
+/* Animations */
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
@@ -59,14 +66,7 @@ h1 {
 }
 
 #hero {
-    padding: 120px;
-    background-color: white;
-    background-image: url("../images/london.jpg");
-    background-position: 50% 80%;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: #7a7a7a;
-    background-blend-mode: multiply;
+    padding: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,9 +85,9 @@ h1 {
 }
 
 main {
-    background-color: white;
     margin: 20px;
     display: flex;
+    align-items: center;
     border-radius: 5px;
     width: fit-content;
 }
@@ -97,7 +97,6 @@ aside {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
     padding: 20px;
     /* border-right: black 5px solid; */
     border-radius: 5px;
@@ -144,17 +143,16 @@ aside .cities {
     display: flex;
     justify-content: center;
     font-size: 40px;
-    color: black;
-    border: black solid 3px;
+    color: white;
+    border: black solid 5px;
     /* box-shadow: 2px 2px 5px black; */
-    border-radius: 5px;
-    background-color: var(--gray-web);
+    border-radius: 10px;
+    background-color: black;
     width: 200px;
 }
 
 aside .cities:hover {
     color: white;
-    border: black solid 3px;
     background-color: var(--ksu-purple);
 }
 
@@ -189,6 +187,7 @@ aside .cities:hover {
 .day {
     margin: 10px;
     padding: 30px;
+    padding-bottom: 5px;
     border-radius: 5px;
     background-color: black;
     color: white;
