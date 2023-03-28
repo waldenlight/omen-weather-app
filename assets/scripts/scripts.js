@@ -139,7 +139,6 @@ var displayData = function (data, retrieve) {
     //             });
     //         }
     //     })
-    console.log(data)
 
     aside.css("min-width", "");
     city.show();
@@ -254,26 +253,126 @@ var displayData = function (data, retrieve) {
         return [highTemp, lowTemp]
     }
 
+    const findAverageHumidity = function (day) {
+        let highHum = null;
+        let lowHum = null;
+        if (day === 1) {
+            for (let i = 8; i < 16; i++) {
+                const humidity = data.list[i].main.humidity;
+                if (humidity >= highHum || highHum == null) {
+                    highHum = humidity;
+                }
+                if (humidity <= lowHum || lowHum == null) {
+                    lowHum = humidity;
+                }
+            }
+        }
+        if (day === 2) {
+            for (let i = 16; i < 24; i++) {
+                const humidity = data.list[i].main.humidity;
+                if (humidity >= highHum || highHum == null) {
+                    highHum = humidity;
+                }
+                if (humidity <= lowHum || lowHum == null) {
+                    lowHum = humidity;
+                }
+            }
+        }
+        if (day === 3) {
+            for (let i = 24; i < 32; i++) {
+                const humidity = data.list[i].main.humidity;
+                if (humidity >= highHum || highHum == null) {
+                    highHum = humidity;
+                }
+                if (humidity <= lowHum || lowHum == null) {
+                    lowHum = humidity;
+                }
+            }
+        }
+        if (day === 4) {
+            for (let i = 24; i < 32; i++) {
+                const humidity = data.list[i].main.humidity;
+                if (humidity >= highHum || highHum == null) {
+                    highHum = humidity;
+                }
+                if (humidity <= lowHum || lowHum == null) {
+                    lowHum = humidity;
+                }
+            }
+        }
+        return (highHum + lowHum) / 2
+    }
+
+    const findAverageWind = function (day) {
+        let highWind = null;
+        let lowWind = null;
+        if (day === 1) {
+            for (let i = 8; i < 16; i++) {
+                const wind = data.list[i].wind.speed;
+                if (wind >= highWind || highWind == null) {
+                    highWind = wind;
+                }
+                if (wind <= lowWind || lowWind == null) {
+                    lowWind = wind;
+                }
+            }
+        }
+        if (day === 2) {
+            for (let i = 16; i < 24; i++) {
+                const wind = data.list[i].wind.speed;
+                if (wind >= highWind || highWind == null) {
+                    highWind = wind;
+                }
+                if (wind <= lowWind || lowWind == null) {
+                    lowWind = wind;
+                }
+            }
+        }
+        if (day === 3) {
+            for (let i = 24; i < 32; i++) {
+                const wind = data.list[i].wind.speed;
+                if (wind >= highWind || highWind == null) {
+                    highWind = wind;
+                }
+                if (wind <= lowWind || lowWind == null) {
+                    lowWind = wind;
+                }
+            }
+        }
+        if (day === 4) {
+            for (let i = 24; i < 32; i++) {
+                const wind = data.list[i].wind.speed;
+                if (wind >= highWind || highWind == null) {
+                    highWind = wind;
+                }
+                if (wind <= lowWind || lowWind == null) {
+                    lowWind = wind;
+                }
+            }
+        }
+        return (highWind + lowWind) / 2
+    }
+
     // Change day one card
     dayOne.text(dayjs().add(1, 'day').format("MMMM D, YYYY"));
     dayOneTemp.text(findTempExtrema(1)[0] + ", " + findTempExtrema(1)[1]);
-    dayOneHumidity.text(data.list[1].main.humidity + "%");
-    dayOneWind.text(Math.floor(data.list[1].wind.speed * 2.23694) + " mph");
+    dayOneHumidity.text(findAverageHumidity(1) + "%");
+    dayOneWind.text(Math.floor(findAverageWind(1) * 2.23694) + " mph");
     // Change day two card
     dayTwo.text(dayjs().add(2, 'day').format("MMMM D, YYYY"));
     dayTwoTemp.text(findTempExtrema(2)[0] + ", " + findTempExtrema(2)[1]);
-    dayTwoHumidity.text(data.list[2].main.humidity + "%");
-    dayTwoWind.text(Math.floor(data.list[2].wind.speed * 2.23694) + " mph");
+    dayTwoHumidity.text(findAverageHumidity(2) + "%");
+    dayTwoWind.text(Math.floor(findAverageWind(2) * 2.23694) + " mph");
     // Change day three card
     dayThree.text(dayjs().add(3, 'day').format("MMMM D, YYYY"));
     dayThreeTemp.text(findTempExtrema(3)[0] + ", " + findTempExtrema(3)[1]);
-    dayThreeHumidity.text(data.list[3].main.humidity + "%");
-    dayThreeWind.text(Math.floor(data.list[3].wind.speed * 2.23694) + " mph");
+    dayThreeHumidity.text(findAverageHumidity(3) + "%");
+    dayThreeWind.text(Math.floor(findAverageWind(3) * 2.23694) + " mph");
     // Change day four card
     dayFour.text(dayjs().add(4, 'day').format("MMMM D, YYYY"));
     dayFourTemp.text(findTempExtrema(4)[0] + ", " + findTempExtrema(4)[1]);
-    dayFourHumidity.text(data.list[4].main.humidity + "%");
-    dayFourWind.text(Math.floor(data.list[4].wind.speed * 2.23694) + " mph");
+    dayFourHumidity.text(findAverageHumidity(4) + "%");
+    dayFourWind.text(Math.floor(findAverageWind(4) * 2.23694) + " mph");
 
     // // Change day five card
     // dayFive.text(dayjs().add(5, 'day').format("MMMM D, YYYY"));
