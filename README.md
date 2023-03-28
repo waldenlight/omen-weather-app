@@ -13,12 +13,6 @@ A weather forecasting app for all your meterological needs.
 
 Simply view in GitHub Pages [Here](https://waldenlight.github.io/omen-weather-app/)
 
-There will be no data displayed right away so look up whatever city you are curious about in the search bar.
-
-You should see this:
-
-![Screenshot of deployed application.](https://user-images.githubusercontent.com/76961678/214759133-739d8c33-11e6-4c03-900f-d95a7644be55.png)
-
 ## Credits
 
 Some APIs and libraries were used in this project, including OpenWeather, Day.js, and FontAwesome.

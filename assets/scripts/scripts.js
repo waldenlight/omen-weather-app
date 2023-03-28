@@ -139,6 +139,7 @@ var displayData = function (data, retrieve) {
     //             });
     //         }
     //     })
+    console.log(data)
 
     aside.css("min-width", "");
     city.show();
@@ -149,9 +150,21 @@ var displayData = function (data, retrieve) {
     hero.show();
     mainCityTitle.text(data.city.name)
     // Change current card
+
+    const findCurrentTemp = function () {
+        let currentHour = dayjs().format("H");
+        let convertedCurrentHour = Math.floor(currentHour / 3);
+        for (let i = 0; i < 8; i++) {
+            if (i = convertedCurrentHour) {
+                const temp = Math.floor((((data.list[i].main.temp - 273.15) * 9) / 5) + 32);
+                return temp
+            }
+        }
+    }
+
     // currentCityTitle.text(data.city.name + " " + dayjs().format("MMMM D, YYYY"));
     currentCityTitle.text(dayjs().format("MMMM D, YYYY"));
-    currentTemperature.text(Math.floor((((data.list[0].main.temp - 273.15) * 9) / 5) + 32));
+    currentTemperature.text(findCurrentTemp());
     currentHumidity.text(data.list[0].main.humidity + "%");
     currentWind.text(Math.floor(data.list[0].wind.speed * 2.23694) + " mph");
 
@@ -189,31 +202,85 @@ var displayData = function (data, retrieve) {
             icon.attr("class", "fa-solid fa-snowflake")
         }
     }
+
+    // Determine extrema for each day
+    const findTempExtrema = function (day) {
+        let highTemp = null;
+        let lowTemp = null;
+        if (day === 1) {
+            for (let i = 8; i < 16; i++) {
+                const temp = Math.floor((((data.list[i].main.temp - 273.15) * 9) / 5) + 32);
+                if (temp >= highTemp || highTemp == null) {
+                    highTemp = temp;
+                }
+                if (temp <= lowTemp || lowTemp == null) {
+                    lowTemp = temp;
+                }
+            }
+        }
+        if (day === 2) {
+            for (let i = 16; i < 24; i++) {
+                const temp = Math.floor((((data.list[i].main.temp - 273.15) * 9) / 5) + 32);
+                if (temp >= highTemp || highTemp == null) {
+                    highTemp = temp;
+                }
+                if (temp <= lowTemp || lowTemp == null) {
+                    lowTemp = temp;
+                }
+            }
+        }
+        if (day === 3) {
+            for (let i = 24; i < 32; i++) {
+                const temp = Math.floor((((data.list[i].main.temp - 273.15) * 9) / 5) + 32);
+                if (temp >= highTemp || highTemp == null) {
+                    highTemp = temp;
+                }
+                if (temp <= lowTemp || lowTemp == null) {
+                    lowTemp = temp;
+                }
+            }
+        }
+        if (day === 4) {
+            for (let i = 32; i < 40; i++) {
+                const temp = Math.floor((((data.list[i].main.temp - 273.15) * 9) / 5) + 32);
+                if (temp >= highTemp || highTemp == null) {
+                    highTemp = temp;
+                }
+                if (temp <= lowTemp || lowTemp == null) {
+                    lowTemp = temp;
+                }
+            }
+        }
+        return [highTemp, lowTemp]
+    }
+
     // Change day one card
     dayOne.text(dayjs().add(1, 'day').format("MMMM D, YYYY"));
-    dayOneTemp.text(Math.floor((((data.list[1].main.temp - 273.15) * 9) / 5) + 32));
+    dayOneTemp.text(findTempExtrema(1)[0] + ", " + findTempExtrema(1)[1]);
     dayOneHumidity.text(data.list[1].main.humidity + "%");
     dayOneWind.text(Math.floor(data.list[1].wind.speed * 2.23694) + " mph");
     // Change day two card
     dayTwo.text(dayjs().add(2, 'day').format("MMMM D, YYYY"));
-    dayTwoTemp.text(Math.floor((((data.list[2].main.temp - 273.15) * 9) / 5) + 32));
+    dayTwoTemp.text(findTempExtrema(2)[0] + ", " + findTempExtrema(2)[1]);
     dayTwoHumidity.text(data.list[2].main.humidity + "%");
     dayTwoWind.text(Math.floor(data.list[2].wind.speed * 2.23694) + " mph");
     // Change day three card
     dayThree.text(dayjs().add(3, 'day').format("MMMM D, YYYY"));
-    dayThreeTemp.text(Math.floor((((data.list[3].main.temp - 273.15) * 9) / 5) + 32));
+    dayThreeTemp.text(findTempExtrema(3)[0] + ", " + findTempExtrema(3)[1]);
     dayThreeHumidity.text(data.list[3].main.humidity + "%");
     dayThreeWind.text(Math.floor(data.list[3].wind.speed * 2.23694) + " mph");
     // Change day four card
     dayFour.text(dayjs().add(4, 'day').format("MMMM D, YYYY"));
-    dayFourTemp.text(Math.floor((((data.list[4].main.temp - 273.15) * 9) / 5) + 32));
+    dayFourTemp.text(findTempExtrema(4)[0] + ", " + findTempExtrema(4)[1]);
     dayFourHumidity.text(data.list[4].main.humidity + "%");
     dayFourWind.text(Math.floor(data.list[4].wind.speed * 2.23694) + " mph");
-    // Change day five card
-    dayFive.text(dayjs().add(5, 'day').format("MMMM D, YYYY"));
-    dayFiveTemp.text(Math.floor((((data.list[5].main.temp - 273.15) * 9) / 5) + 32));
-    dayFiveHumidity.text(data.list[5].main.humidity + "%");
-    dayFiveWind.text(Math.floor(data.list[5].wind.speed * 2.23694) + " mph");
+
+    // // Change day five card
+    // dayFive.text(dayjs().add(5, 'day').format("MMMM D, YYYY"));
+    // dayFiveTemp.text(Math.floor((((data.list[5].main.temp - 273.15) * 9) / 5) + 32));
+    // dayFiveHumidity.text(data.list[5].main.humidity + "%");
+    // dayFiveWind.text(Math.floor(data.list[5].wind.speed * 2.23694) + " mph");
+
     // Check if data has been previously looked up using retrieve parameter
     if (retrieve === false) {
         saveCity(data.city.name);
