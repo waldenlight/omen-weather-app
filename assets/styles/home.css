@@ -167,7 +167,7 @@ aside .cities:hover {
     margin: 30px;
     margin-bottom: none;
     padding: 15px 50px 15px 15px;
-    width: fit-content;
+    width: auto;
 }
 
 #current h2 {
@@ -182,6 +182,7 @@ aside .cities:hover {
 
 #days {
     display: flex;
+    justify-content: space-evenly;
     margin-bottom: 10px;
     width: fit-content;
 }
