@@ -87,7 +87,7 @@ h1 {
 main {
     margin: 20px;
     display: flex;
-    align-items: center;
+    align-items: start;
     border-radius: 5px;
     width: fit-content;
 }
@@ -100,6 +100,7 @@ aside {
     padding: 20px;
     /* border-right: black 5px solid; */
     border-radius: 5px;
+    min-width: fit-content;
     /* border-bottom-left-radius: 5px; */
 }
 
@@ -112,6 +113,9 @@ aside {
 #city {
     width: fit-content;
     max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     /* Transitions */
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
@@ -182,26 +186,19 @@ aside .cities:hover {
 
 #days {
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 10px;
+    justify-content: center;
+    margin: 10px 30px;
     width: fit-content;
+    flex-wrap: wrap;
 }
 
 .day {
-    margin: 10px;
-    padding: 30px;
+    margin: 5px;
+    padding: 20px 20px 45px 20px;
     padding-bottom: 5px;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: black;
     color: white;
-}
-
-.day:first-of-type {
-    margin-left: 30px;
-}
-
-.day:last-of-type {
-    margin-right: 30px;
 }
 
 .day h2 {
@@ -227,17 +224,6 @@ aside .cities:hover {
     display: flex;
 }
 
-.fa-cloud-sun,
-.fa-raindrops {
-    color: white;
-    font-size: 70px;
-}
-
-.fa-sun {
-    color: yellow;
-    font-size: 200px;
-}
-
 #days .fa-cloud-sun,
 #days .fa-raindrops,
 #days .fa-snowflake,
@@ -251,5 +237,91 @@ aside .cities:hover {
     font-size: 200px;
     margin-left: 50px;
     color: black;
-    /* text-shadow: 0px 0px 20px black; */
+    height: fit-content;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 1070px) {
+    #city {
+        width: 500px;
+    }
+
+    #current h2 {
+        font-size: 40px;
+    }
+
+    #current p {
+        font-size: 25px;
+    }
+
+    #current .fa-solid {
+        margin-top: 80px;
+        font-size: 120px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    #hero {
+        padding: 40px;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0px;
+    }
+
+    aside .cities {
+        margin: 15px 0px;
+        font-size: 30px;
+    }
+
+    #current {
+        margin-top: 0px;
+    }
+
+    #current h2 {
+        font-size: 35px;
+    }
+
+    #days .fa-cloud-sun,
+    #days .fa-raindrops,
+    #days .fa-snowflake,
+    #days .fa-sun {
+        font-size: 60px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #city {
+        width: 400px;
+    }
+
+    #current h2 {
+        font-size: 30px;
+    }
+
+    #current p {
+        width: max-content;
+    }
+
+    .day {
+        min-width: 225px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #current .fa-solid {
+        margin-top: 5px;
+        margin-left: -40px;
+        font-size: 80px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    h1 {
+        font-size: 60px;
+    }
 }
