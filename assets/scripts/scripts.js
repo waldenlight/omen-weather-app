@@ -129,17 +129,6 @@ var populateSearchHistory = function () {
 populateSearchHistory();
 
 var displayData = function (data, retrieve) {
-    // Change background photo
-    // var url = "https://maps.googleapis.com/maps/api/place/details/json?place_id=" + placeId + "&fields=photo&key=" + apiKey;
-    // fetch(url)
-    //     .then(function (response) {
-    //         if (response.ok) {
-    //             response.json().then(function (data) {
-    //                 // Display new background photo
-    //             });
-    //         }
-    //     })
-
     aside.css("min-width", "");
     city.show();
     if (data.length === 0) {
@@ -388,6 +377,11 @@ var displayData = function (data, retrieve) {
 
 var queryApi = function () {
     var cityName = citySearch.val();
+
+    // Change background image
+    var background = document.body;
+    background.style.backgroundImage = `url("https://source.unsplash.com/1920x1080/?${cityName}")`
+
     var url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=f712db1c8055a459e955a6153fa03a11";
     fetch(url)
         .then(function (response) {
@@ -413,6 +407,11 @@ citySearch.on('keypress', function (e) {
 var retrieveData = function (event) {
     var city = $(event.target);
     cityName = city.text();
+
+    // Change background image
+    var background = document.body;
+    background.style.backgroundImage = `url("https://source.unsplash.com/1920x1080/?${cityName}")`
+
     var url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=f712db1c8055a459e955a6153fa03a11";
     fetch(url)
         .then(function (response) {
