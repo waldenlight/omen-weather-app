@@ -132,7 +132,13 @@ var displayData = function (data, retrieve) {
     aside.css("min-width", "");
     city.show();
     if (data.length === 0) {
-        currentCityTitle.text("No city found. Please enter a real place lol.");
+        city.hide();
+        currentCityTitle.text("No city found");
+        hero.show();
+        mainCityTitle.text("No city found");
+        // Change background image
+        var background = document.body;
+        background.style.backgroundImage = ``
         return
     }
     hero.show();
@@ -377,7 +383,6 @@ var displayData = function (data, retrieve) {
 
 var queryApi = function () {
     var cityName = citySearch.val();
-
     // Change background image
     var background = document.body;
     background.style.backgroundImage = `url("https://source.unsplash.com/1920x1080/?${cityName}")`
@@ -390,7 +395,13 @@ var queryApi = function () {
                     displayData(data, false);
                 });
             } else {
-                currentCityTitle.text("No city found. Please enter a real place lol.");
+                city.hide();
+                currentCityTitle.text("No city found");
+                hero.show();
+                mainCityTitle.text("No city found");
+                // Change background image
+                var background = document.body;
+                background.style.backgroundImage = ``
             }
         })
 }
