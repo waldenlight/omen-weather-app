@@ -24,7 +24,5 @@ MIT License
 ## Future additions
 
 I do plan on adding more to this project overtime such as...
-1. Responsive styles
-2. More weather icons (perhaps even dynamic ones)
-3. More displayed data
-4. More functionality that differentiates this app from other weather apps
+1. More displayed data
+2. More functionality that differentiates this app from other weather apps
