@@ -266,6 +266,11 @@ aside .cities:hover {
         padding: 40px;
     }
 
+    #hero h2 {
+        font-size: 80px;
+    }
+
+
     main {
         flex-direction: column;
         align-items: center;
@@ -289,7 +294,7 @@ aside .cities:hover {
     #days .fa-raindrops,
     #days .fa-snowflake,
     #days .fa-sun {
-        font-size: 60px;
+        font-size: 80px;
     }
 }
 
@@ -314,8 +319,8 @@ aside .cities:hover {
     }
 
     #current .fa-solid {
-        margin-top: 5px;
-        margin-left: -40px;
+        margin-top: 3px;
+        margin-left: -13px;
         font-size: 80px;
     }
 }
